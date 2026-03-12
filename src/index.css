@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  color-scheme: light;
+  --google-blue: #4285F4;
+  --google-red: #EA4335;
+  --google-yellow: #FBBC05;
+  --google-green: #34A853;
+  --bg: #F9FAFB;
+  --card: #FFFFFF;
+  --text: #1F2937;
+  --text-muted: #6B7280;
+  --border: #E5E7EB;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-[#F9FAFB] text-[#1F2937];
+  }
+}
+
+/* Global Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+@layer components {
+  .prose-professional {
+    @apply prose prose-slate max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:text-gray-600 prose-strong:text-gray-900;
+  }
+  
+  .card-modern {
+    @apply bg-white border border-gray-100 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .label-caps {
+    @apply font-mono text-[10px] uppercase tracking-widest text-gray-400 font-bold;
+  }
+
+  .btn-google {
+    @apply px-6 py-3 bg-[#4285F4] text-white rounded-2xl font-semibold hover:bg-[#3367D6] transition-all shadow-sm hover:shadow-md active:scale-[0.98];
+  }
+}

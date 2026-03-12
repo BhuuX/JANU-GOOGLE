@@ -1,0 +1,5 @@
+{
+  "name": "Janu",
+  "description": "A high-intelligence Google expert hub providing real-time updates on Google programs, product launches, and career news.",
+  "requestFramePermissions": ["geolocation"]
+}
